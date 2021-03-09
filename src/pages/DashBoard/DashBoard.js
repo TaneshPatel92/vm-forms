@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
+import SideBar from '../../components/SideBar'
 
 export default class DashBoard extends Component {
     render() {
         return (
-            <div>
+            <div id="wrapper">
+                <SideBar />
                 <div id="content-wrapper" className="d-flex flex-column">
                     <div id="content">
                         <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">

@@ -29,13 +29,13 @@ class Login extends Component {
                                                     <div className="form-group">
                                                         <div className="custom-control custom-checkbox small">
                                                             <input type="checkbox" className="custom-control-input" id="customCheck" />
-                                                            <label className="custom-control-label" for="customCheck">Remember
+                                                            <label className="custom-control-label" htmlFor="customCheck">Remember
                                                         Me</label>
                                                         </div>
                                                     </div>
                                                     <a href="index.html" className="btn btn-primary btn-user btn-block">
                                                         Login
-                                            </a>
+                                                    </a>
                                                     <hr />
                                                     <a href="index.html" className="btn btn-google btn-user btn-block">
                                                         <i className="fab fa-google fa-fw"></i> Login with Google

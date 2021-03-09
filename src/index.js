@@ -1,18 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import { ConnectedRouter } from 'connected-react-router';
+import Routes from './Routes';
+import { store, persistor, history } from './store/store';
 import reportWebVitals from './reportWebVitals';
-import '../node_modules/jquery/dist/jquery.slim.js'
-import '../node_modules/bootstrap/dist/js/bootstrap.js'
-import '../node_modules/jquery.easing/jquery.easing.js'
+import 'jquery';
+import 'bootstrap';
+import 'jquery.easing';
+import './assets/scss/index.scss';
 import 'react-app-polyfill/ie11';
 import 'react-app-polyfill/stable';
-import './index.scss';
+
+require('es6-promise').polyfill();
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <Provider store={store}>
+    <PersistGate persistor={persistor}>
+      <ConnectedRouter history={history}>
+        <Routes history={history} store={store} />
+      </ConnectedRouter>
+    </PersistGate>
+  </Provider>,
+  document.getElementById('root'),
 );
 reportWebVitals();
